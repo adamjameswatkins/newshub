@@ -11,6 +11,8 @@ import { MaterialModule } from  './material/material.module';
 import { WeatherComponent } from './weather/weather.component';
 import { ChartsModule } from 'ng2-charts';
 import { DeferLoadModule } from './defer-load/defer-load.module';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,7 @@ import { DeferLoadModule } from './defer-load/defer-load.module';
     FormsModule,
     BrowserAnimationsModule,
     MaterialModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [],
   bootstrap: [AppComponent]
